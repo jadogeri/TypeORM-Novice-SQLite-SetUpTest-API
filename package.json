@@ -1,0 +1,29 @@
+{
+  "name": "typeorm-setuptest-api",
+  "version": "1.0.0",
+  "description": "demo setup test fot typeorm in typescript",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadogeri/TypeORM-SetUpTest-API.git"
+  },
+  "keywords": [
+    "Joseph",
+    "Adogeri",
+    "JosephAdogeriDev",
+    "josephadogeridev",
+    "api",
+    "typeorm",
+    "REST",
+    "CRUD"
+  ],
+  "author": "Joseph Adogeri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jadogeri/TypeORM-SetUpTest-API/issues"
+  },
+  "homepage": "https://github.com/jadogeri/TypeORM-SetUpTest-API#readme"
+}
