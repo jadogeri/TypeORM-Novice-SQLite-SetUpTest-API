@@ -2,9 +2,10 @@
   "name": "typeorm-setuptest-api",
   "version": "1.0.0",
   "description": "demo setup test fot typeorm in typescript",
-  "main": "index.ts",
+  "main": "nodemon index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon index.ts"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "homepage": "https://github.com/jadogeri/TypeORM-SetUpTest-API#readme",
   "dependencies": {
     "express": "^5.1.0",
+    "nodemon": "^3.1.10",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
     "typeorm": "^0.3.25"

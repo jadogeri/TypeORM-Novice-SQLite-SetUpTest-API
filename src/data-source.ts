@@ -1,13 +1,13 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { User } from "./entities/User";// Assuming you have a User entity
+import { Employee } from "./entities/Employee";// Assuming you have a Employee entity
 
 export const AppDataSource = new DataSource({
     type: "sqlite",
     database: "database.sqlite", // Name of your SQLite database file
     synchronize: true, // Automatically create/update tables based on entities (for development)
     logging: false, // Set to true for detailed SQL logging
-    entities: [User], // List your entities here
+    entities: [Employee], // List your entities here
     migrations: [],
     subscribers: [],
 });

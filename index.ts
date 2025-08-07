@@ -1,58 +1,59 @@
-import * as express from "express";
+
 import { AppDataSource } from "./src/data-source";
-import { User } from "./src/entities/User";
+import { Employee } from "./src/entities/Employee";
+import express, { Response, Request } from "express";
 
 AppDataSource.initialize()
     .then(async () => {
         const app = express();
         app.use(express.json());
 
-        const userRepository = AppDataSource.getRepository(User);
+        const employeeRepository = AppDataSource.getRepository(Employee);
 
         // CREATE
-        app.post("/users", async (req, res) => {
-            const user = userRepository.create(req.body);
-            await userRepository.save(user);
-            res.status(201).json(user);
+        app.post("/employees", async (req : Request, res: Response) => {
+            const employee = employeeRepository.create(req.body);
+            await employeeRepository.save(employee);
+            res.status(201).json(employee);
         });
 
         // READ (All)
-        app.get("/users", async (req, res) => {
-            const users = await userRepository.find();
-            res.json(users);
+        app.get("/employees", async (req, res) => {
+            const employees = await employeeRepository.find();
+            res.json(employees);
         });
 
         // READ (One)
-        app.get("/users/:id", async (req, res) => {
-            const user = await userRepository.findOneBy({ id: parseInt(req.params.id) });
-            if (user) {
-                res.json(user);
+        app.get("/employees/:id", async (req, res) => {
+            const employee = await employeeRepository.findOneBy({ id: parseInt(req.params.id) });
+            if (employee) {
+                res.json(employee);
             } else {
-                res.status(404).send("User not found");
+                res.status(404).send("Employee not found");
             }
         });
 
         // UPDATE
-        app.put("/users/:id", async (req, res) => {
-            const user = await userRepository.findOneBy({ id: parseInt(req.params.id) });
-            if (user) {
-                userRepository.merge(user, req.body);
-                await userRepository.save(user);
-                res.json(user);
+        app.put("/employees/:id", async (req, res) => {
+            const employee = await employeeRepository.findOneBy({ id: parseInt(req.params.id) });
+            if (employee) {
+                employeeRepository.merge(employee, req.body);
+                await employeeRepository.save(employee);
+                res.json(employee);
             } else {
-                res.status(404).send("User not found");
+                res.status(404).send("Employee not found");
             }
         });
 
         // DELETE
-        app.delete("/users/:id", async (req, res) => {
-            const result = await userRepository.delete(parseInt(req.params.id));
+        app.delete("/employees/:id", async (req, res) => {
+            const result = await employeeRepository.delete(parseInt(req.params.id));
             if (result // && result.affected > 0
 
             ) {
                 res.status(204).send(); // No Content
             } else {
-                res.status(404).send("User not found");
+                res.status(404).send("Employee not found");
             }
         });
 
