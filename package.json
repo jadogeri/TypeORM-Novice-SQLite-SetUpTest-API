@@ -25,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/jadogeri/TypeORM-SetUpTest-API/issues"
   },
-  "homepage": "https://github.com/jadogeri/TypeORM-SetUpTest-API#readme"
+  "homepage": "https://github.com/jadogeri/TypeORM-SetUpTest-API#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.25"
+  }
 }
