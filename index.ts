@@ -48,7 +48,7 @@ AppDataSource.initialize()
         // DELETE
         app.delete("/employees/:id", async (req, res) => {
             const result = await employeeRepository.delete(parseInt(req.params.id));
-            if (result // && result.affected > 0
+            if (result.affected as number > 0
 
             ) {
                 res.status(204).send(); // No Content
