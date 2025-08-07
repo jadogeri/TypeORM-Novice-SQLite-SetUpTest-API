@@ -45,9 +45,21 @@ AppDataSource.initialize()
             }
         });
 
-        // DELETE
+        // DELETE (One)
         app.delete("/employees/:id", async (req, res) => {
             const result = await employeeRepository.delete(parseInt(req.params.id));
+            if (result.affected as number > 0
+
+            ) {
+                res.status(204).send(); // No Content
+            } else {
+                res.status(404).send("Employee not found");
+            }
+        });
+
+        // DELETE (All)
+        app.delete("/employees", async (req, res) => {
+            const result = await employeeRepository.deleteAll();
             if (result.affected as number > 0
 
             ) {
