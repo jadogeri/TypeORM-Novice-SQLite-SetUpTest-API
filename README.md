@@ -71,7 +71,7 @@ The system will allow users to:
 
 ## **2. API Reference**
 
-* [Link to Documentation ](https://documenter.getpostman.com/view/40822092/2sB3BEmphV)
+* [Link to Documentation ](https://documenter.getpostman.com/view/40822092/2sB3BHmUkC)
 
 
 ## **3. Technology Stack**
